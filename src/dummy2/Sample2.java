@@ -1,5 +1,8 @@
 package dummy2;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Sample2 {
 
 	public static void main(String[] args) {
@@ -7,7 +10,8 @@ public class Sample2 {
 
 		
 		//swap1();
-		swap2();
+		//swap2();
+		duplicate1();
 		
 	}
 public static void swap1()
@@ -33,4 +37,24 @@ public static void swap2()
 	
 	
 }
+public static void duplicate1()
+{
+	String s="India is my country I love my country";
+	//splitting words using regex
+	String[] str=s.split("\\W");
+	//creating object of HashSet class
+	Set<String> set=new HashSet<String>();
+	for (int i=0;i<str.length-1;i++)
+	{
+		for(int j=1;j<str.length;j++)
+		{
+			if(str[i].equals(str[j]) && i!=j)
+				set.add(str[i]);	
+		}
+		
+		
+	}
+	System.out.println(set);
+}
+
 }
